@@ -10,7 +10,15 @@ class IndexRoute {
 	}
 
 	public async cadastroTipo(req: app.Request, res: app.Response) {
-		res.render("index/cadastroTipo");
+		let tipos: any[];
+
+		await app.sql.connect(async function (sql: app.Sql) {
+			tipos = await sql.query("select idtipo, nome from tipo order by nome");
+		});
+
+		res.render("index/cadastroTipo", {
+			tipos: tipos
+		});
 	}
 
 	public async cadastroDespesa(req: app.Request, res: app.Response) {

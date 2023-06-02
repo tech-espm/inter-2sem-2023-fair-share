@@ -9,30 +9,46 @@
     </form>
 
     <h2>Current Expenses</h2>
-    <ul id="expenseList"></ul>
+    <ul id="expenseList">
+        <% for (let i=0; i < tipos.length; i++) { %>
+            <li>
+                <%= tipos[i].nome %>
+            </li>
+            <% } %>
+    </ul>
 </div>
 
 <script>
-    document.getElementById('expenseForm').addEventListener('submit', function (e) {
-        e.preventDefault();
+    async function criar() {
+        let input = document.getElementById("expenseName");
+        let expenseName = input.value;
 
-        var expenseName = document.getElementById('expenseName').value;
+        if (!expenseName) {
 
-        async function listItems() {
-            let response = await fetch("/listarTipos");
-
-            let lista = await response.json();
-
-            let div = document.getElementById("expenseList");
-            div.innerHTML = html;
-
+            return;
         }
+
+        let obj = {
+            nome: expenseName
+        };
+        let response = await fetch("/criarTipo", {
+            method: "post",
+            body: JSON.stringify(obj),
+            headers: {
+                "content-type": "application/json"
+            }
+        });
+
+
 
         var listItem = document.createElement('li');
         listItem.innerText = expenseName;
 
         document.getElementById('expenseList').appendChild(listItem);
-
     }
-    );
+
+    document.getElementById('expenseForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        criar();
+    });
 </script>
