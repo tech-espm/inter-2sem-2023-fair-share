@@ -1,10 +1,12 @@
-# Projeto Interdisciplinar I/II/III/IV - Sistemas de Informação ESPM
+# Projeto Interdisciplinar II - Sistemas de Informação ESPM
 <p align="center">
     <a href="https://www.espm.br/cursos-de-graduacao/sistemas-de-informacao/"><img src="https://raw.githubusercontent.com/tech-espm/misc-template/main/logo.png" alt="Sistemas de Informação ESPM" style="width: 375px;"/></a>
 </p>
 
 ## Sistema de divisão de despesas
-### [2°sem, 2023-01] 
+
+### 2023-01
+
 ## Integrantes
 - [Guilherme Martins Macedo](https://github.com/gmacedo16)
 - [Giovanna Caroline Sanches Ferreira](https://github.com/gihferreir4)
@@ -18,6 +20,19 @@ nossas maiores dificuldades é fazer com que as contas sejam divididas de forma 
 tempo bom para organizar os vencimentos, todos os meses. E ai tivemos a ideia de tentar solucionar o nosso problema,
 criando uma interface na qual voce consegue visualizar os vencimentos, definir lembretes para os referidos vencimantos, 
 e fazer a divisão de forma igualitaria, sem termos essa dor de cabeça da divisão.
+
+# Detalhes de Configuração
+
+Para funcionar corretamente, devem ser criados os seguintes arquivos/pastas nos caminhos especificados, com o conteúdo especificado:
+
+- O arquivo `.env` deve ser criado em `/`, com o conteúdo abaixo:
+```
+mysqlhost=localhost
+mysqlport=3306
+mysqluser=[USUÁRIO DO BANCO]
+mysqlpassword=[SENHA DO USUÁRIO DO BANCO]
+mysqldatabase=[NOME DO BANCO]
+```
 
 # Licença
 

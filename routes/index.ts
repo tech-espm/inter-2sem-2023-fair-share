@@ -2,67 +2,50 @@
 
 class IndexRoute {
 	public async index(req: app.Request, res: app.Response) {
-		let nomeDoUsuarioQueVeioDoBanco = "Rafael";
-
-		let opcoes = {
-			usuario: nomeDoUsuarioQueVeioDoBanco,
-			quantidadeDeRepeticoes: 5
-		};
-
-		res.render("index/index", opcoes);
+		res.render("index/index");
 	}
 
-	public async teste(req: app.Request, res: app.Response) {
-		let opcoes = {
-			layout: "casca-teste"
-		};
-
-		res.render("index/teste", opcoes);
+	public async sobre(req: app.Request, res: app.Response) {
+		res.render("index/sobre");
 	}
 
-	public async teste2(req: app.Request, res: app.Response) {
-		let opcoes = {
-			layout: "casca-teste"
-		};
-
-		res.render("index/teste2", opcoes);
+	public async cadastroTipo(req: app.Request, res: app.Response) {
+		res.render("index/cadastroTipo");
 	}
 
-	public async teste3(req: app.Request, res: app.Response) {
-		let opcoes = {
-			layout: "casca-teste"
-		};
+	public async cadastroDespesa(req: app.Request, res: app.Response) {
+		let tipos: any[];
 
-		res.render("index/teste3", opcoes);
+		await app.sql.connect(async function (sql: app.Sql) {
+			tipos = await sql.query("select idtipo, nome from tipo order by nome");
+		});
+
+		res.render("index/cadastroDespesa", {
+			tipos: tipos
+		});
 	}
 
-	public async produtos(req: app.Request, res: app.Response) {
-		let produtoA = {
-			id: 1,
-			nome: "Produto A",
-			valor: 25
-		};
+	@app.http.post()
+	public async criarTipo(req: app.Request, res: app.Response) {
+		let tipo = req.body;
 
-		let produtoB = {
-			id: 2,
-			nome: "Produto B",
-			valor: 15
-		};
+		if (!tipo) {
+			res.status(400);
+			res.json("Dados inválidos");
+			return;
+		}
 
-		let produtoC = {
-			id: 3,
-			nome: "Produto C",
-			valor: 100
-		};
+		if (!tipo.nome) {
+			res.status(400);
+			res.json("Nome inválido");
+			return;
+		}
 
-		let produtosVindosDoBanco = [ produtoA, produtoB, produtoC ];
+		await app.sql.connect(async function (sql: app.Sql) {
+			await sql.query("insert into tipo (nome) values (?)", [tipo.nome]);
+		});
 
-		let opcoes = {
-			titulo: "Listagem de Produtos",
-			produtos: produtosVindosDoBanco
-		};
-
-		res.render("index/produtos", opcoes);
+		res.json(true);
 	}
 }
 

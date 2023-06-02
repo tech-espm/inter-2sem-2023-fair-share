@@ -1,0 +1,50 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.header {
+    padding: 20px;
+    background-color: #FFFFFF;
+    color: #ffffff;
+}
+
+.header img {
+    max-height: 50px;
+}
+
+.section {
+    padding: 50px 0;
+}
+
+.section h2 {
+    margin-bottom: 30px;
+}
+
+.section .carousel-item img {
+    max-width: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.btn-primary {
+    background-color: #0019fc;
+    border-color: #0019fc;
+}
+
+.btn-primary:hover {
+    background-color: #ffffff;
+    color: #0019fc;
+}
+
+.imagem-carrossel {
+    display: block;
+    width: 500px;
+    max-width: 100%;
+    margin: 0px auto;
+}
+
+.table {
+    background-color: #333;
+    color: #fff;
+}
