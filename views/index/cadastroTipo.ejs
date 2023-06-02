@@ -1,0 +1,38 @@
+<div class="container mt-5">
+    <h1>Create New Expense</h1>
+    <form id="expenseForm">
+        <div class="form-group">
+            <label for="expenseName">Expense Name</label>
+            <input type="text" class="form-control" id="expenseName" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Expense</button>
+    </form>
+
+    <h2>Current Expenses</h2>
+    <ul id="expenseList"></ul>
+</div>
+
+<script>
+    document.getElementById('expenseForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var expenseName = document.getElementById('expenseName').value;
+
+        async function listItems() {
+            let response = await fetch("/listarTipos");
+
+            let lista = await response.json();
+
+            let div = document.getElementById("expenseList");
+            div.innerHTML = html;
+
+        }
+
+        var listItem = document.createElement('li');
+        listItem.innerText = expenseName;
+
+        document.getElementById('expenseList').appendChild(listItem);
+
+    }
+    );
+</script>

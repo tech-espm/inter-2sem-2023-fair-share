@@ -25,6 +25,16 @@ class IndexRoute {
 		});
 	}
 
+	public async listarTipos(req: app.Request, res: app.Response) {
+		let tipos: any[];
+
+		await app.sql.connect(async function (sql: app.Sql) {
+			tipos = await sql.query("select idtipo, nome from tipo order by nome");
+		});
+
+		res.json(tipos);
+	}
+
 	@app.http.post()
 	public async criarTipo(req: app.Request, res: app.Response) {
 		let tipo = req.body;
