@@ -1,75 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Sobre Nós</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <style>
-    .participant {
-      margin-bottom: 30px;
-    }
-    .participant img {
-      max-width: 200px;
-      height: auto;
-    }
-    .participant ul {
-      list-style-type: none;
-      padding: 0;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<title>Sobre nós</title>
+<style>
+body {
+    background-color: #000000;
+    color: #ffffff;
+}
+.header {
+    padding: 20px;
+    background-color: #FFFFFF;
+    color: #ffffff;
+}
+.header img {
+    max-height: 50px;
+}
+.section {
+    padding: 50px 0;
+}
+.section h2 {
+    margin-bottom: 30px;
+}
+.section .carousel-item img {
+    max-width: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.btn-primary {
+    background-color: #0019fc;
+    border-color: #0019fc;
+}
+.btn-primary:hover {
+    background-color: #ffffff;
+    color: #0019fc;
+}
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1 class="mt-5">Sobre Nós</h1>
-
-    <div class="participant">
-      <h2>Guilherme Macedo</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <img src="dSasdasd" alt="Foto zé">
-        </div>
-        <div class="col-md-8">
-          <p>sdvsdvdvs</p>
-          <ul>
-            <li>Nome: [Nome do Participante 1]</li>
-          </ul>
-        </div>
-      </div>
+<header class="header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col"> <img src="feira.png" alt="Logo"> </div>
+      <div class="col text-right"> <a href="#" class="btn btn-primary">Divisor de Pagamentos</a> <a href="#" class="btn btn-primary">Página Inicial</a> </div>
     </div>
-
-    <div class="participant">
-      <h2>Dylan Ashby</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <img src="asdcaf" alt="Foto gi">
-        </div>
-        <div class="col-md-8">
-          <p>Informações do Participante 2</p>
-          <ul>
-            <li>Nome: [Nome do Participante 2]</li>
-            <li>Idade: [Idade do Participante 2]</li>
-            <li>Descrição: [Descrição do Participante 2]</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="participant">
-      <h2>Giovanna Ferreira</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <img src="dbdfbdfv" alt="Foto dylan">
-        </div>
-        <div class="col-md-8">
-          <p></p>
-          <ul>
-            <li>fbdzafbafbafb]</li>
-            
-          </ul>
-        </div>
+  </div>
+</header>
+<section class="section">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col text-center">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active"> <img src="Captura de Tela 2023-06-01 às 19.46.41.png" alt="Guilherme Macedo">
+              <div class="carousel-caption d-none d-md-block">
+                <h2>Guilherme Macedo</h2>
+                <p>Descrição da pessoa 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet dapibus ultrices. Aenean tincidunt justo at erat condimentum elementum.</p>
+              </div>
+            </div>
+            <div class="carousel-item"> <img src="giovanna.jpeg" alt="Giovanna Ferreira">
+              <div class="carousel-caption d-none d-md-block">
+                <h2>Giovanna Ferreira</h2>
+                <p>Descrição da pessoa 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet dapibus ultrices. Aenean tincidunt justo at erat condimentum elementum.</p>
+              </div>
+            </div>
+            <div class="carousel-item"> <img src="dylan.jpeg" alt="Dylan Ashby">
+              <div class="carousel-caption d-none d-md-block">
+                <h2>Dylan Ashby</h2>
+                <p>Descrição da pessoa 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet dapibus ultrices. Aenean tincidunt justo at erat condimentum elementum.</p>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Anterior</span> </a> <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Próximo</span> </a> </div>
       </div>
     </div>
   </div>
-
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</section>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>
