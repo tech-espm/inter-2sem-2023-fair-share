@@ -48,3 +48,35 @@ body {
     background-color: #333;
     color: #fff;
 }
+.mini{
+    width: 50px;
+    height: 50px;
+}
+.subtitu{
+    font-size: medium;
+}
+.titu{
+    font-size: 3rem;
+    font-weight: bold;
+}
+.primeira{
+    background-image:url(/public/img/fundoprimeira.png) ;
+    background-position: center;
+    background-size: cover;
+    padding: 100px 100px;
+}
+.colun{
+    max-width:25rem;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgba(0,0,0,0.7);
+    box-shadow: 0 0 20px #000;
+}
+.sub{
+    font-size: large;
+    text-align: center;
+}
+.seg {
+    margin: auto;
+    
+}
