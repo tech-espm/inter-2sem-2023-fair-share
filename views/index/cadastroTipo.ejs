@@ -1,14 +1,14 @@
 <div class="container mt-5">
-    <h1>Create New Expense</h1>
+    <h1>Criar Nova Despesa</h1>
     <form id="expenseForm">
         <div class="form-group">
-            <label for="expenseName">Expense Name</label>
+            <label for="expenseName">Nome da Despesa</label>
             <input type="text" class="form-control" id="expenseName" required>
         </div>
-        <button type="submit" class="btn btn-primary">Create Expense</button>
+        <button type="submit" class="btn btn-primary">Criar Despesa</button>
     </form>
 
-    <h2>Current Expenses</h2>
+    <h2>Despesas Atuais</h2>
     <ul id="expenseList">
         <% for (let i=0; i < tipos.length; i++) { %>
             <li>
